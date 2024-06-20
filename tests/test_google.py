@@ -25,6 +25,7 @@ class ExampleTest(unittest.TestCase):
     def test_google(self):
         self.driver.get("https://www.google.com")
         assert "Google" in self.driver.title
+        assert True
 
         # Find the search box by name attribute and type a random topic
         search_box = self.driver.find_element("name", "q")
