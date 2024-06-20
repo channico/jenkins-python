@@ -3,14 +3,14 @@ pipeline {
     stages {
         stage('Clone repository') {
             steps {
-                git 'https://github.com/nicodemus-aquariux/simple_python'
+                git branch: 'main', url: 'https://github.com/nicodemus-aquariux/simple_python.git'
             }
         }
         stage('Set up Python environment') {
             steps {
                 sh '''
                 python3 -m venv venv
-                source venv/bin/activate
+                . venv/bin/activate
                 pip install -r requirements.txt
                 '''
             }
@@ -18,10 +18,15 @@ pipeline {
         stage('Run Tests') {
             steps {
                 sh '''
-                source venv/bin/activate
-                pytest
+                . venv/bin/activate
+                pytest --junitxml=reports/junit.xml
                 '''
             }
+        }
+    }
+    post {
+        always {
+            junit 'reports/**/*.xml'
         }
     }
 }
