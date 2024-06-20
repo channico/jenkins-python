@@ -1,12 +1,23 @@
 services:
+  jenkins:
+    image: qa-jenkins
+    container_name: jenkins
+    ports:
+      - "8080:8080"
+    networks:
+      - jenkins-network
 
   selenium-hub:
     image: seleniarm/hub:latest
     container_name: selenium-hub
     ports:
       - "4444:4444"
+      - "50000:50000"
     networks:
       - jenkins-network
+    volumes:
+      - ${HOME}/jenkins_compose/jenkins_configuration:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
 
   chrome-node:
     image: seleniarm/node-chromium:latest
