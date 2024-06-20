@@ -6,7 +6,7 @@ services:
     ports:
       - "4444:4444"
     networks:
-      - selenium-network
+      - jenkins-network
 
   chrome-node:
     image: seleniarm/node-chromium:latest
@@ -18,7 +18,7 @@ services:
     volumes:
       - /dev/shm:/dev/shm
     networks:
-      - selenium-network
+      - jenkins-network
 
   firefox-node:
     image: seleniarm/node-firefox:latest
@@ -30,10 +30,11 @@ services:
     volumes:
       - /dev/shm:/dev/shm
     networks:
-      - selenium-network
+      - jenkins-network
 
 networks:
-  selenium-network:
-    driver: bridge
+  jenkins-network:
+    name: jenkins-network
+    external: true
 
 
