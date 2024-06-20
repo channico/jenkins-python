@@ -30,6 +30,7 @@ htmlcov/
 .hypothesis/
 .pytest_cache/
 cover/
+reports/
 
 # Jupyter Notebook
 .ipynb_checkpoints/
