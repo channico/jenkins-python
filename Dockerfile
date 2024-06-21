@@ -7,6 +7,9 @@ USER root
 # Install Python and pip
 RUN apt-get update && \
     apt-get install -y python3 python3-pip && \
+    apt-get install -y python3-venv && \
+    apt-get install -y python3-pytest && \
+    apt-get install -y python3-selenium && \
     apt-get install -y maven && \
     apt-get clean
 

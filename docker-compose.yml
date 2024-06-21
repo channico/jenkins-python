@@ -1,18 +1,22 @@
 services:
   jenkins:
-    image: qa-jenkins
+    image: jenkins-python
     container_name: jenkins
     ports:
       - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
     networks:
       - jenkins-network
+
 
   selenium-hub:
     image: seleniarm/hub:latest
     container_name: selenium-hub
     ports:
       - "4444:4444"
-      - "50000:50000"
+
     networks:
       - jenkins-network
     volumes:
@@ -45,7 +49,9 @@ services:
 
 networks:
   jenkins-network:
-    name: jenkins-network
-    external: true
+    driver: bridge
+
+volumes:
+  jenkins_home:
 
 
