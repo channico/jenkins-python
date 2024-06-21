@@ -74,7 +74,8 @@ Click on jenkins container to get the password it should look something like thi
 4. Click **OK**
 5. In the Configuration screen for the demo-build job scroll down to **Pipeline**
 6. Paste the following into the script Text area:
-```json
+
+```
 pipeline {
     agent any
     stages {
@@ -113,8 +114,9 @@ pipeline {
 7. Click on **Build Now** to run the job
 
 **NOTE:**
-    * The first time the job runs, Jenkins will download and install Allure
-    * If the job hangs, stop it and rerun the job
+
+  * The first time the job runs, Jenkins will download and install Allure
+  * If the job hangs, stop it and rerun the job
 
 
 ## Controlling Container Instances
