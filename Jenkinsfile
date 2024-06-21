@@ -12,6 +12,7 @@ pipeline {
                 python3 -m venv venv
                 . venv/bin/activate
                 pip install -r requirements.txt
+                pip install allure-pytest
                 '''
             }
         }
@@ -19,7 +20,7 @@ pipeline {
             steps {
                 sh '''
                 . venv/bin/activate
-                pytest --junitxml=reports/junit.xml
+                pytest --junitxml=reports/junit.xml --alluredir=reports/allure-results
                 '''
             }
         }
@@ -27,6 +28,7 @@ pipeline {
     post {
         always {
             junit 'reports/**/*.xml'
+            allure includeProperties: false, jdk: '', results: [[path: 'reports/allure-results']]
         }
     }
 }
