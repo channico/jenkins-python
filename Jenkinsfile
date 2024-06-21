@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/nicodemus-aquariux/simple_python.git'
+                git branch: 'main', url: 'https://github.com/channico/jenkins-python.git'
             }
         }
         stage('Set up Python environment') {
