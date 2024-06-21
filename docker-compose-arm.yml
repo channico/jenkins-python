@@ -12,7 +12,7 @@ services:
 
 
   selenium-hub:
-    image: selenium/hub:latest
+    image: seleniarm/hub:latest
     container_name: selenium-hub
     ports:
       - "4444:4444"
@@ -24,7 +24,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
 
   chrome-node:
-    image: selenium/node-chromium:latest
+    image: seleniarm/node-chromium:latest
     container_name: chrome-node
     environment:
       - SE_EVENT_BUS_HOST=selenium-hub
@@ -36,7 +36,7 @@ services:
       - jenkins-network
 
   firefox-node:
-    image: selenium/node-firefox:latest
+    image: seleniarm/node-firefox:latest
     container_name: firefox-node
     environment:
       - SE_EVENT_BUS_HOST=selenium-hub
