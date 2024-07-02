@@ -1,7 +1,7 @@
 # tests/test_my_class.py
 
 import unittest
-from src.my_module.my_class import MyClass
+from my_module.my_class import MyClass
 
 
 class TestMyClass(unittest.TestCase):
