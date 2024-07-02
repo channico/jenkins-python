@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('Clone repository') {
             steps {
+                cleanWs()
                 git branch: 'main', url: 'https://github.com/channico/jenkins-python.git'
             }
         }
