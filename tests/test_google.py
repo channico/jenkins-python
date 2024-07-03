@@ -1,12 +1,13 @@
 import random
 import allure
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.remote.webdriver import WebDriver
 
 
 @allure.feature('Navigation')
 @allure.story('Open Example Domain')
 @allure.severity(allure.severity_level.CRITICAL)
-def test_google(driver):
+def test_google(driver: WebDriver):
     with allure.step('Open Google'):
         driver.get('https://www.google.com')
 

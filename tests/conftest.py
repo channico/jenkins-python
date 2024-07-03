@@ -4,12 +4,13 @@ import os
 import allure
 import pytest
 from selenium import webdriver
+from selenium.webdriver.remote.webdriver import WebDriver
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
 
 @pytest.fixture
-def driver():
+def driver() -> WebDriver:
     # Initialize the WebDriver
     options = webdriver.ChromeOptions()
     options.add_argument("headless")  # Headless mode - browser with UI (faster)
