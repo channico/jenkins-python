@@ -1,5 +1,11 @@
 # SETTING UP FOR AUTOMATED TESTING
 
+## Video Tutorial
+
+[![Automation Testing with Jenkins](https://img.youtube.com/vi/MxWJ6BkVv0o/hqdefault.jpg)](https://youtu.be/MxWJ6BkVv0o)
+
+Watch the [Automation Testing with Jenkins tutorial](https://youtu.be/MxWJ6BkVv0o) for a guided demonstration of running Python and Selenium automated tests using Jenkins, Selenium Grid, Docker, pytest and Allure reporting.
+
 ## Set up Jenkins
 ### Docker Image
 
@@ -29,7 +35,7 @@ Click on jenkins container to get the password it should look something like thi
 2024-06-20 17:55:59 Jenkins initial setup is required. An admin user has been created and a password generated.
 2024-06-20 17:55:59 Please use the following password to proceed to installation:
 2024-06-20 17:55:59
-2024-06-20 17:55:59 9745877e35934f3b8060b86d46626a2b
+2024-06-20 17:55:59 <generated-initial-admin-password>
 2024-06-20 17:55:59
 2024-06-20 17:55:59 This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 2024-06-20 17:55:59
